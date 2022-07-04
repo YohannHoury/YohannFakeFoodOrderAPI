@@ -1,5 +1,7 @@
 <?php
 
+require "./src/Entities/Customer.php";
+
 class CustomerManager
 {
     private array $customers;
@@ -16,7 +18,14 @@ class CustomerManager
 
     public function getAllCustomers() : array
     {
-        return $this->customers;
+        $list = [];
+        
+        foreach($this->customers as $customer)
+        {
+            $list[] = $customer->toArray();
+        }
+        
+        return $list;
     }
 
     public function createCustomer(Customer $customer) : ?Customer

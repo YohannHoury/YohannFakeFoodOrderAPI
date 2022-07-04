@@ -85,5 +85,20 @@ class Customer
     {
         $this->email = $email;
     }
+    
+    /**
+     * @return null|array  
+     */
+    public function toArray() : ?array 
+    {
+        $object = [];
+        $object["id"] = $this->getId();
+        $object["firstName"] = $this->getFirstName();
+        $object["lastName"] = $this->getLastName();
+        $object["fullName"] = $this->getFirstName() . " " . $this->getLastName();
+        $object["email"] = $this->getEmail();
+        
+        return $object;
+    }
 
 }

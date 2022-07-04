@@ -1,5 +1,7 @@
 <?php
 
+require "./src/Managers/CustomerManager.php";
+
 class CustomerController
 {
     private CustomerManager $cm;

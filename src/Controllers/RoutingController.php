@@ -1,5 +1,7 @@
 <?php
 
+require "./src/Controllers/CustomerController.php";
+
 class RoutingController
 {
 
@@ -11,7 +13,7 @@ class RoutingController
             {
                 $controller = new CustomerController();
 
-                $controller->route($post, $get);
+                return $controller->route($post, $get);
             }
         }
 
